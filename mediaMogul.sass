@@ -1,0 +1,77 @@
+/** mediaMogul.sass
+  * a simple sass library for managing media queries
+  * in responsive design
+  * @author: IonikLabs <www.ioniklabs.com>
+  * @version: 0.0.1
+  * @license MIT
+  */
+
+$screen-xs:       480px !default
+$screen-xs-min:   $screen-xs !default
+
+$screen-sm:       768px !default
+$screen-sm-min:   $screen-sm !default
+
+$screen-md:       992px !default
+$screen-md-min:   $screen-md !default
+
+$screen-lg:       1200px !default
+$screen-lg-min:   $screen-lg !default
+
+$screen-xl:       1920px !default
+$screen-xl-min:   $screen-xl !default
+
+$screen-xs-max:   $screen-sm-min - 1 !default
+$screen-sm-max:   $screen-md-min - 1 !default
+$screen-md-max:   $screen-lg-min - 1 !default
+$screen-lg-max:   $screen-xl-min !default
+
+$screens: "ss", "xs", "sm", "md", "lg", "xl"
+
+$valid-screens: "ss", ">ss", "xs", ">xs", "<sm", "<=sm", "sm", ">=sm", ">sm", "<md", "<=md", "md", ">=md", ">md", "<lg", "lg", "<xl", "xl"
+
+$ss: "null", $screen-xs-min
+$xs: "null", $screen-xs-max
+$sm: $screen-sm-min, $screen-sm-max
+$md: $screen-md-min, $screen-md-max
+$lg: $screen-lg-min, "null"
+$xl: $screen-lg-max, "null"
+
+=mq($def, $mediatype: "only screen")
+  @if index($valid-screens, $def) == null
+    @error "'#{$def}' is not a valid screen definition."
+  $screen: str-slice($def, -2, -1)
+  $screen-map: $xs
+  @if $screen == "ss"
+    $screen-map: $ss
+  @else if $screen == "xs"
+    $screen-map: $xs
+  @else if $screen == "sm"
+    $screen-map: $sm
+  @else if $screen == "md"
+    $screen-map: $md
+  @else if $screen == "lg"
+    $screen-map: $lg
+  @else if $screen == "xl"
+    $screen-map: $xl
+  $screen-min: nth($screen-map, 1)
+  $screen-max: nth($screen-map, 2)
+  @if $def == "<#{$screen}"
+    @media #{$mediatype} and (max-width: $screen-min - 1)
+      @content
+  @else if $def == "<=#{$screen}" or $def == "xs" or $def == "ss"
+    @media #{$mediatype} and (max-width: $screen-max)
+      @content
+  @else if $def == ">=#{$screen}" or $def == "lg" or $def == "xl"
+    @media #{$mediatype} and (min-width: $screen-min)
+      @content
+  @else if $def == ">#{$screen}"
+    @media #{$mediatype} and (min-width: $screen-max + 1)
+      @content
+  @else if $def == #{$screen}
+    @media #{$mediatype} and (min-width: $screen-min) and (max-width: $screen-max)
+      @content
+
+=print
+  @media print
+    @content

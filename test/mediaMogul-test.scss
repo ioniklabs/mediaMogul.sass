@@ -1,4 +1,4 @@
-@import 'mediaMogul.scss';
+@import '../mediaMogul.scss';
 
 table {
   border-collapse: collapse;
@@ -37,27 +37,17 @@ table {
   }
 }
 
-$valid-screens: ('ss', 'ss'), ('>ss', 'gtss'),
+$test-screens: ('ss', 'ss'), ('>ss', 'gtss'),
                 ('xs', 'xs'), ('>xs', 'gtxs'),
                 ('<sm', 'ltsm'), ('<=sm', 'ltesm'), ('sm', 'sm'), ('>=sm', 'gtesm'), ('>sm', 'gtsm'),
                 ('<md', 'ltmd'), ('<=md', 'ltemd'), ('md', 'md'), ('>=md', 'gtemd'), ('>md', 'gtmd'),
                 ('<lg', 'ltlg'), ('lg', 'lg'),
                 ('<xl', 'ltxl'), ('xl', 'xl');
 
-@function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
-
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
-
-  @return $string;
-}
-
 td {
   .disabled { background-color: #f9f9f9; }
   &:not(.disabled) { background-color: #F44336; }
-  @each $screen in $valid-screens {
+  @each $screen in $test-screens {
     $definition: nth($screen, 1);
     $class-name: nth($screen, 2);
     @include mq($definition) {

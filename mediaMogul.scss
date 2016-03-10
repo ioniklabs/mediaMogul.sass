@@ -1,3 +1,11 @@
+/** mediaMogul.sass
+  * a simple sass library for managing media queries
+  * in responsive design
+  * @author: IonikLabs <www.ioniklabs.com>
+  * @version: 0.0.1
+  * @license MIT
+  */
+
 $screen-xs:       480px !default;
 $screen-xs-min:   $screen-xs !default;
 
@@ -35,24 +43,29 @@ $xl: $screen-lg-max, 'null';
 
 @mixin mq( $def, $mediatype: 'only screen' ) {
 
-  // @if not index($valid-screens, $def) {
-  //  @error "'#{$def}' is not a valid screen definition.";
-  // }
+  @if index($valid-screens, $def) == null {
+    @error "'#{$def}' is not a valid screen definition.";
+  }
 
   $screen: str-slice($def, -2, -1);
   $screen-map: $xs;
 
   @if $screen == 'ss' {
     $screen-map: $ss;
-  } @else if $screen == 'xs' {
+  }
+  @else if $screen == 'xs' {
     $screen-map: $xs;
-  } @else if $screen == 'sm' {
+  }
+  @else if $screen == 'sm' {
     $screen-map: $sm;
-  } @else if $screen == 'md' {
+  }
+  @else if $screen == 'md' {
     $screen-map: $md;
-  } @else if $screen == 'lg' {
+  }
+  @else if $screen == 'lg' {
     $screen-map: $lg;
-  } @else if $screen == 'xl' {
+  }
+  @else if $screen == 'xl' {
     $screen-map: $xl;
   }
 
