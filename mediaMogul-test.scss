@@ -1,0 +1,67 @@
+@import 'mediaMogul.scss';
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb;
+  thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+  }
+  tbody {
+    tr {
+      border-top: 1px solid #cbcbcb;
+      &:first-child {
+        border-top-width: 0;
+      }
+    }
+  }
+  td,
+  th {
+    border-style: solid;
+    border-color: #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 5px 10px;
+    &:first-child {
+      border-left-width: 0;
+    }
+  }
+  td {
+    width: 20px;
+  }
+}
+
+$valid-screens: ('ss', 'ss'), ('>ss', 'gtss'),
+                ('xs', 'xs'), ('>xs', 'gtxs'),
+                ('<sm', 'ltsm'), ('<=sm', 'ltesm'), ('sm', 'sm'), ('>=sm', 'gtesm'), ('>sm', 'gtsm'),
+                ('<md', 'ltmd'), ('<=md', 'ltemd'), ('md', 'md'), ('>=md', 'gtemd'), ('>md', 'gtmd'),
+                ('<lg', 'ltlg'), ('lg', 'lg'),
+                ('<xl', 'ltxl'), ('xl', 'xl');
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+td {
+  .disabled { background-color: #f9f9f9; }
+  &:not(.disabled) { background-color: #F44336; }
+  @each $screen in $valid-screens {
+    $definition: nth($screen, 1);
+    $class-name: nth($screen, 2);
+    @include mq($definition) {
+      &.#{$class-name} { background-color: #8BC34A; };
+    }
+  }
+}

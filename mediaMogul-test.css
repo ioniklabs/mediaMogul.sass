@@ -1,0 +1,89 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  border: 1px solid #cbcbcb; }
+  table thead {
+    background-color: #e0e0e0;
+    color: #000;
+    text-align: center;
+    vertical-align: middle; }
+  table tbody tr {
+    border-top: 1px solid #cbcbcb; }
+    table tbody tr:first-child {
+      border-top-width: 0; }
+  table td,
+  table th {
+    border-style: solid;
+    border-color: #cbcbcb;
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible;
+    padding: 5px 10px; }
+    table td:first-child,
+    table th:first-child {
+      border-left-width: 0; }
+  table td {
+    width: 20px; }
+
+td .disabled {
+  background-color: #f9f9f9; }
+td:not(.disabled) {
+  background-color: #F44336; }
+@media only screen and (max-width: 480px) {
+  td.ss {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 481px) {
+  td.gtss {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 767px) {
+  td.xs {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 768px) {
+  td.gtxs {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 767px) {
+  td.ltsm {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 991px) {
+  td.ltesm {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  td.sm {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 768px) {
+  td.gtesm {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 992px) {
+  td.gtsm {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 991px) {
+  td.ltmd {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 1199px) {
+  td.ltemd {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  td.md {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 992px) {
+  td.gtemd {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 1200px) {
+  td.gtmd {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 1199px) {
+  td.ltlg {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 1200px) {
+  td.lg {
+    background-color: #8BC34A; } }
+@media only screen and (max-width: 1919px) {
+  td.ltxl {
+    background-color: #8BC34A; } }
+@media only screen and (min-width: 1920px) {
+  td.xl {
+    background-color: #8BC34A; } }
+
+/*# sourceMappingURL=mediaMogul-test.css.map */
