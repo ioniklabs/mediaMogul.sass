@@ -19,7 +19,6 @@ a simple sass library for managing media queries in responsive design
  ...
 }
 ```
-
 ### example:
 
 ``` scss 
@@ -60,4 +59,13 @@ would compile to
     max-width: 960px;
   }
 }
+```
+### settings
+breakpoint definitions follow the same format as Bootstrap allowing for out of the box integration. If you would like to mediaMogul with another framework or custom breakpoints the below variables should be set before mediaMogul is included in the project. *support for custom definitions is in the pipeline*
+``` scss
+$screen-xs:       480px !default;
+$screen-sm:       768px !default;
+$screen-md:       992px !default;
+$screen-lg:       1200px !default;
+$screen-xl:       1920px !default;
 ```
