@@ -73,4 +73,4 @@ $screen-xl:       1920px !default;
 - convert default mediatype to variable
 - custom definition support
 - convert ss definition to xxs
-- support for range definitions *m-lg*
+- support for range definitions *md-lg*
