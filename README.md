@@ -69,3 +69,8 @@ $screen-md:       992px !default;
 $screen-lg:       1200px !default;
 $screen-xl:       1920px !default;
 ```
+### todo
+- convert default mediatype to variable
+- custom definition support
+- convert ss definition to xxs
+- support for range definitions *m-lg*
