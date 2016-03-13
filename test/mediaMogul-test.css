@@ -38,58 +38,58 @@ td .disabled {
   background-color: #f9f9f9; }
 td:not(.disabled) {
   background-color: #F44336; }
-@media only screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
   td.ss {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 481px) {
+@media all and (min-width: 481px) {
   td.gtss {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 767px) {
+@media all and (max-width: 767px) {
   td.xs {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 768px) {
+@media all and (min-width: 768px) {
   td.gtxs {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 767px) {
+@media all and (max-width: 767px) {
   td.ltsm {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 991px) {
+@media all and (max-width: 991px) {
   td.ltesm {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media all and (min-width: 768px) and (max-width: 991px) {
   td.sm {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 768px) {
+@media all and (min-width: 768px) {
   td.gtesm {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 992px) {
+@media all and (min-width: 992px) {
   td.gtsm {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 991px) {
+@media all and (max-width: 991px) {
   td.ltmd {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 1199px) {
+@media all and (max-width: 1199px) {
   td.ltemd {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media all and (min-width: 992px) and (max-width: 1199px) {
   td.md {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 992px) {
+@media all and (min-width: 992px) {
   td.gtemd {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 1200px) {
+@media all and (min-width: 1200px) {
   td.gtmd {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 1199px) {
+@media all and (max-width: 1199px) {
   td.ltlg {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 1200px) {
+@media all and (min-width: 1200px) {
   td.lg {
     background-color: #8BC34A; } }
-@media only screen and (max-width: 1919px) {
+@media all and (max-width: 1919px) {
   td.ltxl {
     background-color: #8BC34A; } }
-@media only screen and (min-width: 1920px) {
+@media all and (min-width: 1920px) {
   td.xl {
     background-color: #8BC34A; } }
 

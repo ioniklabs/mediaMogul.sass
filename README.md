@@ -15,7 +15,7 @@ a simple sass library for managing media queries in responsive design
  * @param $definition    ['ss', '>ss', 'xs', '>xs', '<sm', '<=sm', 'sm', '>=sm', '>sm', '<md', '<=md', 'md', '>=md', '>md', '<lg', 'lg', '<xl', 'xl']
  * @param $mediatype     mediatype e.g. 'screen', 'print', 'all'
  */
-@include mq($definition, [$mediatype: 'only screen']) {
+@include mq($definition, [$mediatype: 'all']) {
  ...
 }
 ```
@@ -43,18 +43,18 @@ would compile to
 .wrapper {
   width: 100%;
 }
-@media only screen and (min-width: 768px) {
+@media all and (min-width: 768px) {
   .wrapper {
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media all and (min-width: 768px) and (max-width: 991px) {
   .wrapper {
     max-width: 640px;
   }
 }
-@media only screen and (min-width: 992px) {
+@media all and (min-width: 992px) {
   .wrapper {
     max-width: 960px;
   }
@@ -63,14 +63,15 @@ would compile to
 ### settings
 breakpoint definitions follow the same format as Bootstrap allowing for out of the box integration. If you would like to mediaMogul with another framework or custom breakpoints the below variables should be set before mediaMogul is included in the project. *support for custom definitions is in the pipeline*
 ``` scss
-$screen-xs:       480px !default;
-$screen-sm:       768px !default;
-$screen-md:       992px !default;
-$screen-lg:       1200px !default;
-$screen-xl:       1920px !default;
+$default-mediatype: 'all' !default;
+$screen-xs:         480px !default;
+$screen-sm:         768px !default;
+$screen-md:         992px !default;
+$screen-lg:         1200px !default;
+$screen-xl:         1920px !default;
 ```
 ### todo
-- convert default mediatype to variable
-- custom definition support
-- convert ss definition to xxs
-- support for range definitions *md-lg*
+- [x] convert default mediatype to variable
+- [] custom definition support
+- [] convert ss definition to xxs
+- [] support for range definitions *md-lg*
